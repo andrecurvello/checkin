@@ -116,7 +116,7 @@ if($_GET["password"] == PASSWORD) {
 
         <?php
             $fp = fopen('./data/data.txt', 'r');
-            $json = json_decode(fread($fp,filesize('./data/dashboard.txt')));
+            $json = json_decode(fread($fp,filesize('./data/data.txt')));
             fclose($fp);
         ?>
 
