@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>PhoneGap</title>
+  <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
+  <script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+ </head>
+ <body onload="init();">
+    <button id="btnSend">CheckIn</button>
+    <span id="load"/>
+ </body>
+ 
+ 
+  <script type="text/javascript">
+
+    function init() {
+        document.addEventListener("deviceready", onDeviceReady, true);
+    }
+
+    var onDeviceReady = function() {};
+
+    var onSuccess = function(position) {
+        $("#load").load("http://myserver.com/index.php?password=AXlABo01Tk&lat="+position.coords.latitude+"&long="+position.coords.longitude+"&accuracy="+position.coords.accuracy+"&message=Checkin");     
+    };
+
+    function onError(error) {
+        alert('code: '    + error.code    + '\n message: ' + error.message + '\n');
+    }
+
+    $("#btnSend").click(function(){
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    });
+  
+  </script>
+ 
+</html>
