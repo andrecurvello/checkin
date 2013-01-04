@@ -19,6 +19,7 @@ if($_GET["password"] == PASSWORD) {
     $fp = fopen('./data/data.txt', 'w');
     fwrite($fp, json_encode($json));
     fclose($fp);
+    echo "Success";
     exit();
 }
 ?>
@@ -123,7 +124,7 @@ if($_GET["password"] == PASSWORD) {
 
         <div class="row">
             <div class="span4">
-                <p>Message: <?php echo $json->{'message'} ?> (<?php echo $json->{'refresh'} ?>)</h2></p>
+                <p><img src="img/user_comment.png"/> <?php echo $json->{'message'} ?> <sub>(<?php echo $json->{'refresh'} ?>)</sub></p>
             </div>
         </div>
 
