@@ -48,7 +48,7 @@
 
     var onSuccess = function(position) {
         $("#load").html("...");
-        $("#load").load("http://myserver.com/index.php?password=AXlABo01Tk&lat="+position.coords.latitude+"&long="+position.coords.longitude+"&accuracy="+position.coords.accuracy+"&message="+$("#txtMessage").val());
+        $("#load").load("http://myserver.com/index.php?password=AXlABo01Tk&lat="+position.coords.latitude+"&long="+position.coords.longitude+"&accuracy="+position.coords.accuracy+"&message="+encodeURI($("#txtMessage").val()));
     };
 
     function onError(error) {
