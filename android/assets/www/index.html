@@ -4,10 +4,37 @@
   <title>PhoneGap</title>
   <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
   <script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+  <link href="bootstrap.css" rel="stylesheet">
+  <link href="bootstrap-responsive.css" rel="stylesheet">
+  
+  <style type="text/css">
+	  body {
+	    padding-top: 20px;
+	    padding-bottom: 40px;
+	  }
+  </style>
+  
+  
  </head>
  <body onload="init();">
-    <button id="btnSend">CheckIn</button>
-    <span id="load"/>
+ <div class="container">
+	 <div class="row">
+		<div class="span9">
+		    <img src="user_comment.png"/> <input type="text" id="txtMessage"/>
+	    </div>
+	 </div>
+	 <div class="row">
+	    <div class="span9">
+	    	<button id="btnSend" class="btn btn-primary">Send</button>
+	    </div>
+	 </div>
+	 <div class="row">
+	    <div class="span9">
+	    	<span id="load"/>
+	    </div>
+	 </div>
+	 </div>
+ </div>
  </body>
  
  
@@ -20,7 +47,8 @@
     var onDeviceReady = function() {};
 
     var onSuccess = function(position) {
-        $("#load").load("http://myserver.com/index.php?password=AXlABo01Tk&lat="+position.coords.latitude+"&long="+position.coords.longitude+"&accuracy="+position.coords.accuracy+"&message=Checkin");     
+        $("#load").html("...");
+        $("#load").load("http://myserver.com/index.php?password=AXlABo01Tk&lat="+position.coords.latitude+"&long="+position.coords.longitude+"&accuracy="+position.coords.accuracy+"&message="+$("#txtMessage").val());
     };
 
     function onError(error) {
