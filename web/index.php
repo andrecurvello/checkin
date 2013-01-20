@@ -40,7 +40,6 @@ if($_GET["password"] == PASSWORD) {
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <style>
             body{
               padding-top: 30px;
@@ -93,7 +92,7 @@ if($_GET["password"] == PASSWORD) {
               border-bottom:16px solid #336699;
             }
     </style>
-
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
   </head>
 
   <body>
